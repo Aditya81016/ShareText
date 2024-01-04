@@ -9,8 +9,13 @@
 <AccordionItem>
   <svelte:fragment slot="summary">
     <div class="flex w-full justify-between items-center">
-      {post.title}
+      <div
+        class="md:max-w-[calc(100vw-25rem)] max-md:max-w-[calc(100vw-13.5rem)] overflow-hidden text-ellipsis"
+      >
+        {post.title}
+      </div>
       <Button
+        styles="relative z-30"
         variant={"variant-ghost-success"}
         feedbackVariant="variant-filled-success"
         feedbackTitle="Copied!"

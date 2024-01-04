@@ -11,6 +11,8 @@
       <a class="anchor" href="http://github.com/Aditya81016/ShareText/"
         >GitHub</a
       >
+      <b>|</b>
+      <b>Theme:</b>
       <LightSwitch />
     </div>
   </div>
@@ -20,6 +22,6 @@
 
 <style>
   .header {
-    @apply flex w-full justify-between items-end;
+    @apply flex max-md:flex-col w-full justify-between items-end max-md:items-start;
   }
 </style>

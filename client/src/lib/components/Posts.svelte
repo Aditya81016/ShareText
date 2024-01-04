@@ -3,16 +3,22 @@
   import { Accordion, AccordionItem } from "@skeletonlabs/skeleton";
   import Button from "./Button.svelte";
   import Post from "./Post.svelte";
+  import { onValue, ref } from "firebase/database";
+  import { database } from "$lib/config/firebase";
 
-  let posts: IPost[] = [
-    { title: "Title", content: "Dummy data for post" },
-    { title: "Title", content: "Dummy data for post" },
-  ];
+  let posts: IPost[] = [];
+
+  onValue(ref(database, "posts"), (snapshot) => {
+    const value = snapshot.val() ?? {};
+    console.log(value);
+
+    posts = Object.values(value);
+  });
 </script>
 
 <div class="post">
   <div class="header">
-    <Accordion>
+    <Accordion class="flex flex-col-reverse">
       {#each posts as post}
         <Post {post} />
       {/each}

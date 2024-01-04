@@ -21,6 +21,6 @@
 
 <style>
   #root {
-    @apply w-screen h-screen md:px-32 md:pt-32 max-md:px-8 max-md:pt-64 overflow-y-auto;
+    @apply w-screen h-[100dvh] md:px-32 md:pt-32 max-md:px-8 max-md:pt-64 overflow-y-auto;
   }
 </style>

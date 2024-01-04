@@ -1,5 +1,7 @@
 <script lang="ts">
+  import { ref, set } from "firebase/database";
   import Button from "./Button.svelte";
+  import { database } from "$lib/config/firebase";
 
   let title: string = "",
     content: string = "";
@@ -7,7 +9,11 @@
   $: submitDisabled = title.trim() === "" || content.trim() === "";
 
   function onSubmit() {
-    alert("Submitted!");
+    set(ref(database, "posts/" + Date.now()), {
+      title: title.trim(),
+      content: content.trim(),
+    });
+    console.log("Sent");
   }
 </script>
 
