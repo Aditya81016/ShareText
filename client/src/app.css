@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind variants;
+
+/* modern theme */
+@font-face {
+  font-family: "Quicksand";
+  src: url("/fonts/Quicksand.ttf");
+  font-display: swap;
+}
+
+.page {
+  @apply flex flex-col gap-6 w-full;
+}
